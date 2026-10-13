@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 153720765}
   - component: {fileID: 153720766}
   - component: {fileID: 153720767}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 283577165}
   - component: {fileID: 283577164}
   - component: {fileID: 283577163}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 1010174191}
   - component: {fileID: 1010174190}
   - component: {fileID: 1010174189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2239,7 +2239,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -2344,6 +2344,9 @@ MonoBehaviour:
   speed: 2
   chaseDistance: 5
   damageAmount: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1543067496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2466,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000059604645, y: -0.07944059}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2473,7 +2476,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.7906922, y: 0.84225416}
   m_EdgeRadius: 0
 --- !u!50 &1713504598
 Rigidbody2D:
@@ -2610,7 +2613,7 @@ GameObject:
   - component: {fileID: 1764918700}
   - component: {fileID: 1764918699}
   - component: {fileID: 1764918698}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: CoinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2749,7 +2752,7 @@ GameObject:
   - component: {fileID: 1960882088}
   - component: {fileID: 1960882087}
   - component: {fileID: 1960882086}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
