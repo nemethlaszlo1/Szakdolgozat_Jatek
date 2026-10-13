@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
     public float speed = 2f;
     public float chaseDistance = 5f;
     public int damageAmount = 20;
+    public LayerMask obstacleLayer;
 
     private Transform playerTransform;
     private GameManager gameManager;
@@ -27,7 +28,11 @@ public class EnemyAI : MonoBehaviour
             float distance = Vector2.Distance(transform.position, playerTransform.position);
             if (distance < chaseDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+                RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTransform.position, obstacleLayer);
+                if (hit.collider == null || hit.collider.CompareTag("Player"))
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+                }
             }
         }
     }
