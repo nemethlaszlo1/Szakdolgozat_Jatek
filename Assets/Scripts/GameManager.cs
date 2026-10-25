@@ -46,6 +46,15 @@ public class GameManager : MonoBehaviour
 
         UpdateUI();
 
+        if (playerObject != null)
+        {
+            PlayerCombat combatScript = playerObject.GetComponent<PlayerCombat>();
+            if (combatScript != null)
+            {
+                StartCoroutine(combatScript.PlayerFlashRed());
+            }
+        }
+
         if (health <= 0)
         {
             StartCoroutine(PlayerDeathRoutine());
@@ -62,6 +71,12 @@ public class GameManager : MonoBehaviour
         SpriteRenderer sprite = playerObject.GetComponent<SpriteRenderer>();
         if (sprite != null) sprite.enabled = false;
 
+        PlayerCombat combat = playerObject.GetComponent<PlayerCombat>(); // harc és kard eltüntetés halálkor fix.
+        if (combat != null)
+        {
+            combat.enabled = false;
+            combat.weaponPivot.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(respawnDelay);
 
         health = maxHealth;
@@ -71,6 +86,12 @@ public class GameManager : MonoBehaviour
 
         if (sprite != null) sprite.enabled = true;
         if (movement != null) movement.enabled = true;
+
+        if (combat != null) //harc visszakapcs.
+        {
+            combat.enabled = true;
+            combat.weaponPivot.gameObject.SetActive(true);
+        }
 
         UpdateUI();
     }

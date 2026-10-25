@@ -3,15 +3,24 @@ using UnityEngine;
 public class SpikeTrap : MonoBehaviour
 {
     public int damageAmount = 10;
+    public float damageInterval = 2f; //2mp
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private GameManager gm;
+    private float nextDamageTime = 0f;
+
+    void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager gm = FindObjectOfType<GameManager>();
-            if (gm != null)
+            if (Time.time >= nextDamageTime && gm != null)
             {
                 gm.TakeDamage(damageAmount);
+                nextDamageTime = Time.time + damageInterval;
             }
         }
     }

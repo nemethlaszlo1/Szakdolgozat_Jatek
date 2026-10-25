@@ -6,6 +6,8 @@ public class EnemyAI : MonoBehaviour
     public float speed = 2f;
     public float chaseDistance = 5f;
     public int damageAmount = 20;
+    public float damageInterval = 2f; //2mp (default)
+    private float nextDamageTime = 0f;
     public LayerMask obstacleLayer;
 
     private Transform playerTransform;
@@ -37,13 +39,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (gameManager != null)
+            if (gameManager != null && Time.time >= nextDamageTime)
             {
                 gameManager.TakeDamage(damageAmount);
+                nextDamageTime = Time.time + damageInterval;
             }
         }
     }

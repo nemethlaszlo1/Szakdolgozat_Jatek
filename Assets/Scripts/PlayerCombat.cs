@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -8,10 +9,20 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage = 20;
     public LayerMask enemyLayers;      // ellenfél rétege
 
+    public Transform weaponPivot;
+    private SpriteRenderer playerSprite;
+    private bool isAttacking = false;
+
+    void Start()
+    {
+        playerSprite = GetComponent<SpriteRenderer>();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
         {
+            StartCoroutine(SwingSword());
             Attack();
         }
     }
@@ -28,6 +39,26 @@ public class PlayerCombat : MonoBehaviour
                 health.TakeDamage(attackDamage);
             }
         }
+    }
+
+    IEnumerator SwingSword()    //ütés anim.
+    {
+        isAttacking = true;
+        weaponPivot.localRotation = Quaternion.Euler(0, 0, -45);
+        yield return new WaitForSeconds(0.05f);
+
+        weaponPivot.localRotation = Quaternion.Euler(0, 0, 45);
+        yield return new WaitForSeconds(0.1f);
+
+        weaponPivot.localRotation = Quaternion.Euler(0, 0, 0);
+        isAttacking = false;
+    }
+
+    public IEnumerator PlayerFlashRed() //sérülés anim.
+    {
+        playerSprite.color = Color.red;
+        yield return new WaitForSeconds(0.15f);
+        playerSprite.color = Color.white;
     }
 
     void OnDrawGizmosSelected() //debug
