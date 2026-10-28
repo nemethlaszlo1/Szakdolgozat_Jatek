@@ -13,8 +13,10 @@ public class RoomTemplates : MonoBehaviour
     public GameObject closedRoom;
     public GameObject bossRoom;
 
-    public int maxRooms = 10;
+    public int maxRooms = 30;
 
     [HideInInspector]
     public List<GameObject> rooms;
+
+    public List<Vector2> occupiedPositions = new List<Vector2>();
 }
