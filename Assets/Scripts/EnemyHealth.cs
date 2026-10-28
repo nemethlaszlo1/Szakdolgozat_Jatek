@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        Debug.Log("Ellenfél sebződött! Hátralévő HP: " + currentHealth);
+        Debug.Log("Ellenfél sebződött! Hátralévő HP: " + currentHealth); //debug
 
         StartCoroutine(FlashRed());
         if (currentHealth <= 0)
@@ -39,6 +39,21 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Ellenfél meghalt.");
+
+        //xp
+        GameManager gm = FindObjectOfType<GameManager>();
+        if (gm != null)
+        {
+            gm.AddXP(50); //szörny xp dobás
+        }
+
+        //loot
+        LootSpawner spawner = GetComponent<LootSpawner>();
+        if (spawner != null)
+        {
+            spawner.DropLoot();
+        }
+
         Destroy(gameObject);
     }
 }

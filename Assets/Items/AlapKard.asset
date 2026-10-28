@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
+  m_Name: AlapKard
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Fakard
+  itemIcon: {fileID: -1782993226962895715, guid: a4d25d423a56a994fa1d645b457d42b6, type: 3}
+  description: Ez egy fa kard.
+  isWeapon: 1
+  isConsumable: 0
+  isKey: 0
+  healAmount: 0
+  attackDamage: 5
+  attackRange: 0.5
+  attackSpeed: 1.2
+  price: 3

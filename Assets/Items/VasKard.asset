@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
+  m_Name: VasKard
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: VasKard
+  itemIcon: {fileID: -8744361999528005354, guid: 9fe78c989c002be44bd853ed9b9c7bd6, type: 3}
+  description: "Egy \xE1tlagos kard."
+  isWeapon: 1
+  isConsumable: 0
+  isKey: 0
+  healAmount: 0
+  attackDamage: 15
+  attackRange: 0.5
+  attackSpeed: 1.3
+  price: 15

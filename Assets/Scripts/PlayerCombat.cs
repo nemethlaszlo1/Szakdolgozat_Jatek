@@ -7,23 +7,43 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public int attackDamage = 20;
-    public LayerMask enemyLayers;      // ellenfél rétege
+    public LayerMask enemyLayers;
 
     public Transform weaponPivot;
+    public SpriteRenderer weaponSpriteRenderer;
     private SpriteRenderer playerSprite;
     private bool isAttacking = false;
+
+    public Item currentWeapon;
+    private float nextAttackTime = 0f;
 
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
+
+        if (currentWeapon != null)
+        {
+            EquipWeapon(currentWeapon);
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        if (Time.time >= nextAttackTime)
         {
-            StartCoroutine(SwingSword());
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+            {
+                StartCoroutine(SwingSword());
+                Attack();
+
+                float cooldown = 0.5f;
+                if (currentWeapon != null)
+                {
+                    cooldown = currentWeapon.attackSpeed;
+                }
+
+                nextAttackTime = Time.time + cooldown;
+            }
         }
     }
 
@@ -31,17 +51,24 @@ public class PlayerCombat : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
+        int totalDamage = attackDamage;
+        GameManager gm = FindObjectOfType<GameManager>();
+        if (gm != null)
+        {
+            totalDamage += gm.extraDamage;
+        }
+
         foreach (Collider2D enemy in hitEnemies)
         {
             EnemyHealth health = enemy.GetComponent<EnemyHealth>();
             if (health != null)
             {
-                health.TakeDamage(attackDamage);
+                health.TakeDamage(totalDamage);
             }
         }
     }
 
-    IEnumerator SwingSword()    //ütés anim.
+    IEnumerator SwingSword()    // ütés anim.
     {
         isAttacking = true;
         weaponPivot.localRotation = Quaternion.Euler(0, 0, -45);
@@ -54,14 +81,33 @@ public class PlayerCombat : MonoBehaviour
         isAttacking = false;
     }
 
-    public IEnumerator PlayerFlashRed() //sérülés anim.
+    public IEnumerator PlayerFlashRed() // sérülés anim.
     {
         playerSprite.color = Color.red;
         yield return new WaitForSeconds(0.15f);
         playerSprite.color = Color.white;
     }
 
-    void OnDrawGizmosSelected() //debug
+    //fegyvercsere
+    public void EquipWeapon(Item newWeapon)
+    {
+        if (newWeapon.isWeapon)
+        {
+            currentWeapon = newWeapon;
+            attackDamage = newWeapon.attackDamage;
+            attackRange = newWeapon.attackRange;
+
+            // karakter kezében lévő kard -> új kard sprite
+            if (weaponSpriteRenderer != null)
+            {
+                weaponSpriteRenderer.sprite = newWeapon.itemIcon;
+            }
+
+            Debug.Log("Új fegyver felszerelve: " + newWeapon.itemName + " (Sebzés: " + attackDamage + ")");
+        }
+    }
+
+    void OnDrawGizmosSelected() // debug
     {
         if (attackPoint == null) return;
         Gizmos.color = Color.red;
