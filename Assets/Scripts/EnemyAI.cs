@@ -34,6 +34,19 @@ public class EnemyAI : MonoBehaviour
                 if (hit.collider == null || hit.collider.CompareTag("Player"))
                 {
                     transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+
+                    Vector3 scale = transform.localScale;
+
+                    if (playerTransform.position.x > transform.position.x)
+                    {
+                        scale.x = Mathf.Abs(scale.x);
+                    }
+                    else if (playerTransform.position.x < transform.position.x)
+                    {
+                        scale.x = -Mathf.Abs(scale.x);
+                    }
+
+                    transform.localScale = scale;
                 }
             }
         }

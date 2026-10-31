@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 50;
+    public int xpDropAmount = 50;
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
 
@@ -44,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         GameManager gm = FindObjectOfType<GameManager>();
         if (gm != null)
         {
-            gm.AddXP(50); //szörny xp dobás
+            gm.AddXP(xpDropAmount); //szörny xp dobás
         }
 
         //loot

@@ -1,0 +1,54 @@
+using UnityEngine;
+
+public class KnightAI : MonoBehaviour //ugyanaz mint enemyAI csak nincs benne érintéskor dmg
+{
+    [Header("Beállítások")]
+    public float speed = 2f;
+    public float chaseDistance = 5f;
+    public int damageAmount = 20;
+    public float damageInterval = 2f; //2mp (default)
+    private float nextDamageTime = 0f;
+    public LayerMask obstacleLayer;
+
+    private Transform playerTransform;
+    private GameManager gameManager;
+
+    void Start()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerTransform = playerObject.transform;
+        }
+        gameManager = Object.FindFirstObjectByType<GameManager>();
+    }
+
+    void Update()
+    {
+        if (playerTransform != null)
+        {
+            float distance = Vector2.Distance(transform.position, playerTransform.position);
+            if (distance < chaseDistance)
+            {
+                RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTransform.position, obstacleLayer);
+                if (hit.collider == null || hit.collider.CompareTag("Player"))
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+
+                    Vector3 scale = transform.localScale;
+
+                    if (playerTransform.position.x > transform.position.x)
+                    {
+                        scale.x = Mathf.Abs(scale.x);
+                    }
+                    else if (playerTransform.position.x < transform.position.x)
+                    {
+                        scale.x = -Mathf.Abs(scale.x);
+                    }
+
+                    transform.localScale = scale;
+                }
+            }
+        }
+    }
+}
