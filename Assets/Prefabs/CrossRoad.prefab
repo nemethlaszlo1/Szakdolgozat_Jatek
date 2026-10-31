@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 2
+  spawnDelay: 0.5
+  mustSpawnCorridor: 0
   spawned: 0
 --- !u!1 &3629029035064580441
 GameObject:
@@ -241,6 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 3
+  spawnDelay: 0.5
+  mustSpawnCorridor: 0
   spawned: 0
 --- !u!1 &3821838943663987231
 GameObject:
@@ -362,6 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 4
+  spawnDelay: 0.5
+  mustSpawnCorridor: 0
   spawned: 0
 --- !u!1 &6731009273995149487
 GameObject:
@@ -4864,4 +4870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 1
+  spawnDelay: 0.5
+  mustSpawnCorridor: 0
   spawned: 0

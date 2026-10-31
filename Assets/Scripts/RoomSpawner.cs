@@ -3,20 +3,23 @@ using UnityEngine;
 public class RoomSpawner : MonoBehaviour
 {
     public int openingDirection;
+    public float spawnDelay = 0.5f;
+    public bool mustSpawnCorridor = false;
+
     private RoomTemplates templates;
-    private int rand;
     public bool spawned = false;
 
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomTemplates>();
-        Invoke("Spawn", Random.Range(0.2f, 0.5f));
+        Invoke("Spawn", spawnDelay);
     }
 
     void Spawn()
     {
         if (spawned == false)
         {
+            // Ha foglalt a hely, megállunk
             if (IsPositionOccupied(transform.position))
             {
                 spawned = true;
@@ -26,10 +29,29 @@ public class RoomSpawner : MonoBehaviour
 
             if (templates.rooms.Count < templates.maxRooms)
             {
-                if (openingDirection == 1) { rand = Random.Range(0, templates.bottomRooms.Length); Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation); }
-                else if (openingDirection == 2) { rand = Random.Range(0, templates.topRooms.Length); Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation); }
-                else if (openingDirection == 3) { rand = Random.Range(0, templates.rightRooms.Length); Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation); }
-                else if (openingDirection == 4) { rand = Random.Range(0, templates.leftRooms.Length); Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation); }
+                GameObject roomToSpawn = null;
+
+                //folyosó lerak.
+                if (mustSpawnCorridor)
+                {
+                    if (openingDirection == 1) { roomToSpawn = GetPrefab(templates.bottomCorridors); }
+                    else if (openingDirection == 2) { roomToSpawn = GetPrefab(templates.topCorridors); }
+                    else if (openingDirection == 3) { roomToSpawn = GetPrefab(templates.rightCorridors); }
+                    else if (openingDirection == 4) { roomToSpawn = GetPrefab(templates.leftCorridors); }
+                }
+                //szoba lerak
+                else
+                {
+                    if (openingDirection == 1) { roomToSpawn = GetPrefab(templates.bottomRooms); }
+                    else if (openingDirection == 2) { roomToSpawn = GetPrefab(templates.topRooms); }
+                    else if (openingDirection == 3) { roomToSpawn = GetPrefab(templates.rightRooms); }
+                    else if (openingDirection == 4) { roomToSpawn = GetPrefab(templates.leftRooms); }
+                }
+
+                if (roomToSpawn != null)
+                {
+                    Instantiate(roomToSpawn, transform.position, roomToSpawn.transform.rotation);
+                }
             }
             else
             {
@@ -37,6 +59,30 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
         }
+    }
+
+
+    GameObject GetPrefab(GameObject[] roomArray)
+    {
+        if (roomArray.Length == 0) return null;
+
+        int rand = Random.Range(0, roomArray.Length);
+        GameObject selectedRoom = roomArray[rand];
+
+        if (selectedRoom.name.Contains("TreasureRoom"))
+        {
+            if (templates.treasureRoomSpawned)
+            {
+                return roomArray[0];
+            }
+            else
+            {
+                templates.treasureRoomSpawned = true;
+                return selectedRoom;
+            }
+        }
+
+        return selectedRoom;
     }
 
     bool IsPositionOccupied(Vector2 targetPos)

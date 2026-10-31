@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
-    //szobák
+    //szobak
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
 
-    //zsákutca szobák
+    //folyosok
+    public GameObject[] bottomCorridors;
+    public GameObject[] topCorridors;
+    public GameObject[] leftCorridors;
+    public GameObject[] rightCorridors;
+
     public GameObject closedRoom;
     public GameObject bossRoom;
 
@@ -19,4 +24,5 @@ public class RoomTemplates : MonoBehaviour
     public List<GameObject> rooms;
 
     public List<Vector2> occupiedPositions = new List<Vector2>();
+    public bool treasureRoomSpawned = false;
 }

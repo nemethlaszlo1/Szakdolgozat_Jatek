@@ -1101,6 +1101,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1241,6 +1242,21 @@ MonoBehaviour:
   target: {fileID: 1713504600}
   smoothSpeed: 5
   offset: {x: 0, y: 0, z: -10}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aca1f49e5b02ba45a32bd0c72b92556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
+  zoomSpeed: 10
+  minZoom: 5
+  maxZoom: 100
 --- !u!1 &570553039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,21 +2165,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTemplates
   bottomRooms:
+  - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
+  - {fileID: 7139829560734914892, guid: 511f46c7341f20b44858aeaa36289c2e, type: 3}
+  - {fileID: 7139829560734914892, guid: ca956872bd93ace44ab2e3c3294a3428, type: 3}
   - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
-  - {fileID: 7139829560734914892, guid: 65d8783185d31224b91a949fe86ba2ef, type: 3}
   topRooms:
+  - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
+  - {fileID: 7139829560734914892, guid: 0d4c9dba015f8d842984047bc791a235, type: 3}
+  - {fileID: 7139829560734914892, guid: 5321010f3354871429d6a878968a4545, type: 3}
+  - {fileID: 7139829560734914892, guid: ca400ece7e802e74690908927bc304a1, type: 3}
+  - {fileID: 7139829560734914892, guid: 01e8ef15432f63e4f9b49c50d60513a9, type: 3}
+  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  leftRooms:
+  - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
+  - {fileID: 7139829560734914892, guid: 0d4c9dba015f8d842984047bc791a235, type: 3}
+  - {fileID: 7139829560734914892, guid: 4827d0e3e7eb9d644a89f39209bebcf8, type: 3}
+  - {fileID: 7139829560734914892, guid: ca956872bd93ace44ab2e3c3294a3428, type: 3}
+  - {fileID: 7139829560734914892, guid: ca400ece7e802e74690908927bc304a1, type: 3}
+  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  rightRooms:
+  - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
+  - {fileID: 7139829560734914892, guid: 511f46c7341f20b44858aeaa36289c2e, type: 3}
+  - {fileID: 7139829560734914892, guid: 0d4c9dba015f8d842984047bc791a235, type: 3}
+  - {fileID: 7139829560734914892, guid: 4827d0e3e7eb9d644a89f39209bebcf8, type: 3}
+  - {fileID: 7139829560734914892, guid: 5321010f3354871429d6a878968a4545, type: 3}
+  - {fileID: 7139829560734914892, guid: 01e8ef15432f63e4f9b49c50d60513a9, type: 3}
+  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  bottomCorridors:
   - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   - {fileID: 7139829560734914892, guid: 65d8783185d31224b91a949fe86ba2ef, type: 3}
-  leftRooms:
+  topCorridors:
+  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  - {fileID: 7139829560734914892, guid: 65d8783185d31224b91a949fe86ba2ef, type: 3}
+  leftCorridors:
   - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   - {fileID: 7139829560734914892, guid: c792d0653b5102d4b8a1eb5ed4ef5ee5, type: 3}
-  rightRooms:
+  rightCorridors:
   - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   - {fileID: 7139829560734914892, guid: c792d0653b5102d4b8a1eb5ed4ef5ee5, type: 3}
-  closedRoom: {fileID: 9036334181508971142, guid: 04b50be3e118d70478e42816a6f957e1, type: 3}
+  closedRoom: {fileID: 7139829560734914892, guid: 7c85a9e5529cd174da5baa7b7bb1d524, type: 3}
   bossRoom: {fileID: 0}
-  maxRooms: 30
+  maxRooms: 50
   rooms: []
+  occupiedPositions: []
+  treasureRoomSpawned: 0
 --- !u!4 &848317966
 Transform:
   m_ObjectHideFlags: 0
