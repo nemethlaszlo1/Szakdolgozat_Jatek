@@ -2145,6 +2145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848317966}
   - component: {fileID: 848317965}
+  - component: {fileID: 848317967}
   m_Layer: 0
   m_Name: DungeonManager
   m_TagString: GameController
@@ -2168,21 +2169,18 @@ MonoBehaviour:
   - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
   - {fileID: 7139829560734914892, guid: 511f46c7341f20b44858aeaa36289c2e, type: 3}
   - {fileID: 7139829560734914892, guid: ca956872bd93ace44ab2e3c3294a3428, type: 3}
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   topRooms:
   - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
   - {fileID: 7139829560734914892, guid: 0d4c9dba015f8d842984047bc791a235, type: 3}
   - {fileID: 7139829560734914892, guid: 5321010f3354871429d6a878968a4545, type: 3}
   - {fileID: 7139829560734914892, guid: ca400ece7e802e74690908927bc304a1, type: 3}
   - {fileID: 7139829560734914892, guid: 01e8ef15432f63e4f9b49c50d60513a9, type: 3}
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   leftRooms:
   - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
   - {fileID: 7139829560734914892, guid: 0d4c9dba015f8d842984047bc791a235, type: 3}
   - {fileID: 7139829560734914892, guid: 4827d0e3e7eb9d644a89f39209bebcf8, type: 3}
   - {fileID: 7139829560734914892, guid: ca956872bd93ace44ab2e3c3294a3428, type: 3}
   - {fileID: 7139829560734914892, guid: ca400ece7e802e74690908927bc304a1, type: 3}
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   rightRooms:
   - {fileID: 7139829560734914892, guid: 36aa5e9fb5f0bf347a5e78c1adef228a, type: 3}
   - {fileID: 7139829560734914892, guid: 511f46c7341f20b44858aeaa36289c2e, type: 3}
@@ -2190,19 +2188,38 @@ MonoBehaviour:
   - {fileID: 7139829560734914892, guid: 4827d0e3e7eb9d644a89f39209bebcf8, type: 3}
   - {fileID: 7139829560734914892, guid: 5321010f3354871429d6a878968a4545, type: 3}
   - {fileID: 7139829560734914892, guid: 01e8ef15432f63e4f9b49c50d60513a9, type: 3}
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
   bottomCorridors:
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  - {fileID: 7139829560734914892, guid: 0c7fd302eede04a48a20c7c213f4edae, type: 3}
   - {fileID: 7139829560734914892, guid: 65d8783185d31224b91a949fe86ba2ef, type: 3}
+  - {fileID: 7139829560734914892, guid: b88ae180cad9eb641aaec7dc60175652, type: 3}
+  - {fileID: 7139829560734914892, guid: d1a6c580679723e4ea8753ac0b962797, type: 3}
+  - {fileID: 7139829560734914892, guid: f4347772ddfb5f842b38245bff104036, type: 3}
+  - {fileID: 7139829560734914892, guid: 16d9569944e0baf45817dadf66dce065, type: 3}
+  - {fileID: 7139829560734914892, guid: 2ed54863f7a66eb49ac55fb88c793f50, type: 3}
   topCorridors:
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  - {fileID: 7139829560734914892, guid: 0c7fd302eede04a48a20c7c213f4edae, type: 3}
   - {fileID: 7139829560734914892, guid: 65d8783185d31224b91a949fe86ba2ef, type: 3}
+  - {fileID: 7139829560734914892, guid: 4af019841b956374693f32feb1411386, type: 3}
+  - {fileID: 7139829560734914892, guid: 2454c35e16bb6f64b8bb5ad27409b2d3, type: 3}
+  - {fileID: 7139829560734914892, guid: cb64e0e4b2bb1814cb8d0d5c1d52626f, type: 3}
+  - {fileID: 7139829560734914892, guid: f4347772ddfb5f842b38245bff104036, type: 3}
+  - {fileID: 7139829560734914892, guid: 2ed54863f7a66eb49ac55fb88c793f50, type: 3}
   leftCorridors:
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  - {fileID: 7139829560734914892, guid: 0c7fd302eede04a48a20c7c213f4edae, type: 3}
   - {fileID: 7139829560734914892, guid: c792d0653b5102d4b8a1eb5ed4ef5ee5, type: 3}
+  - {fileID: 7139829560734914892, guid: b88ae180cad9eb641aaec7dc60175652, type: 3}
+  - {fileID: 7139829560734914892, guid: 4af019841b956374693f32feb1411386, type: 3}
+  - {fileID: 7139829560734914892, guid: cb64e0e4b2bb1814cb8d0d5c1d52626f, type: 3}
+  - {fileID: 7139829560734914892, guid: f4347772ddfb5f842b38245bff104036, type: 3}
+  - {fileID: 7139829560734914892, guid: 16d9569944e0baf45817dadf66dce065, type: 3}
   rightCorridors:
-  - {fileID: 7139829560734914892, guid: 4f8e5e20094a28b488fedb5d336b4843, type: 3}
+  - {fileID: 7139829560734914892, guid: 0c7fd302eede04a48a20c7c213f4edae, type: 3}
   - {fileID: 7139829560734914892, guid: c792d0653b5102d4b8a1eb5ed4ef5ee5, type: 3}
+  - {fileID: 7139829560734914892, guid: d1a6c580679723e4ea8753ac0b962797, type: 3}
+  - {fileID: 7139829560734914892, guid: 2454c35e16bb6f64b8bb5ad27409b2d3, type: 3}
+  - {fileID: 7139829560734914892, guid: cb64e0e4b2bb1814cb8d0d5c1d52626f, type: 3}
+  - {fileID: 7139829560734914892, guid: 16d9569944e0baf45817dadf66dce065, type: 3}
+  - {fileID: 7139829560734914892, guid: 2ed54863f7a66eb49ac55fb88c793f50, type: 3}
   closedRoom: {fileID: 7139829560734914892, guid: 7c85a9e5529cd174da5baa7b7bb1d524, type: 3}
   bossRoom: {fileID: 0}
   maxRooms: 50
@@ -2224,6 +2241,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848317967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848317964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6a13b3edb230f47b12b3af5f71c408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonGenerator
+  templates: {fileID: 0}
+  maxRooms: 80
+  gridSize: 15
 --- !u!1 &849526321
 GameObject:
   m_ObjectHideFlags: 0
