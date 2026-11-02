@@ -1,5 +1,117 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1409582480992573908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5762487304587180895}
+  - component: {fileID: 4702172217564150514}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5762487304587180895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409582480992573908}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.95, y: 0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2836604284866185648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4702172217564150514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409582480992573908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89c673c7012a184a9b07f265ff3328a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  spawnChance: 60
+  weakEnemies:
+  - {fileID: 5576820132130781742, guid: e6b04cf878dd5c447aa075546f629cf0, type: 3}
+  - {fileID: 896153127499372740, guid: 1ba7a4d65a8c5e1499896876d9b2c60f, type: 3}
+  - {fileID: 7005628284589563241, guid: 2ae55de4fe11947499e5386cdd56d113, type: 3}
+  strongEnemies:
+  - {fileID: 5089185324820041665, guid: e13b9de013272b74e822f38bd7148ee9, type: 3}
+  - {fileID: 3808337729375701589, guid: 0d3f09796b2d6cd499b4281c1f61c610, type: 3}
+  - {fileID: 1654076918138787175, guid: da1a0d15ae878a04ea3b9a4d2cc92050, type: 3}
+  miniBosses:
+  - {fileID: 4773313681468649594, guid: 0aad5dbeb9d2b4a4594dc37dd1e6f591, type: 3}
+  - {fileID: 3895931472274957052, guid: c39818ce41ead514c929828f2d8b7592, type: 3}
+--- !u!1 &3357771716235302824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8945584933005852091}
+  - component: {fileID: 2883704856070134454}
+  m_Layer: 0
+  m_Name: SpawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8945584933005852091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357771716235302824}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 4.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2836604284866185648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2883704856070134454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357771716235302824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89c673c7012a184a9b07f265ff3328a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  spawnChance: 60
+  weakEnemies:
+  - {fileID: 5576820132130781742, guid: e6b04cf878dd5c447aa075546f629cf0, type: 3}
+  - {fileID: 896153127499372740, guid: 1ba7a4d65a8c5e1499896876d9b2c60f, type: 3}
+  - {fileID: 7005628284589563241, guid: 2ae55de4fe11947499e5386cdd56d113, type: 3}
+  strongEnemies:
+  - {fileID: 5089185324820041665, guid: e13b9de013272b74e822f38bd7148ee9, type: 3}
+  - {fileID: 3808337729375701589, guid: 0d3f09796b2d6cd499b4281c1f61c610, type: 3}
+  - {fileID: 1654076918138787175, guid: da1a0d15ae878a04ea3b9a4d2cc92050, type: 3}
+  miniBosses:
+  - {fileID: 4773313681468649594, guid: 0aad5dbeb9d2b4a4594dc37dd1e6f591, type: 3}
+  - {fileID: 3895931472274957052, guid: c39818ce41ead514c929828f2d8b7592, type: 3}
 --- !u!1 &3629029035064580441
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 3
-  spawnDelay: 0.5
   mustSpawnCorridor: 1
   spawned: 0
 --- !u!1 &3821838943663987231
@@ -243,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   openingDirection: 4
-  spawnDelay: 0.5
   mustSpawnCorridor: 1
   spawned: 0
 --- !u!1 &4020042071650408326
@@ -4673,7 +4783,6 @@ GameObject:
   - component: {fileID: 2503295388622240390}
   - component: {fileID: 6629577847273438868}
   - component: {fileID: 2023026201362154770}
-  - component: {fileID: 5533707357531624982}
   m_Layer: 0
   m_Name: Room4
   m_TagString: Room
@@ -4694,6 +4803,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8945584933005852091}
+  - {fileID: 1130580745595686530}
+  - {fileID: 5762487304587180895}
   - {fileID: 6380358429472678608}
   - {fileID: 6881068710085854805}
   - {fileID: 8938351065190466049}
@@ -4788,18 +4900,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5533707357531624982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139829560734914892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9bf8fdb995dd344f90490a34904f79b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AddRoom
 --- !u!1 &7752385765224024422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,3 +5304,59 @@ MonoBehaviour:
   closedDoorSprite: {fileID: -5161630515522921098, guid: abf640abb758774468c18a1867049e7d, type: 3}
   openDoorSprite: {fileID: -578904658552062867, guid: 441dc7502dd6e5c48a77a86bbb9e5557, type: 3}
   solidCollider: {fileID: 1757695155431241449}
+--- !u!1 &8536942470708006100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130580745595686530}
+  - component: {fileID: 1088254601132631376}
+  m_Layer: 0
+  m_Name: SpawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130580745595686530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536942470708006100}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.97, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2836604284866185648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088254601132631376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536942470708006100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89c673c7012a184a9b07f265ff3328a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  spawnChance: 60
+  weakEnemies:
+  - {fileID: 5576820132130781742, guid: e6b04cf878dd5c447aa075546f629cf0, type: 3}
+  - {fileID: 896153127499372740, guid: 1ba7a4d65a8c5e1499896876d9b2c60f, type: 3}
+  - {fileID: 7005628284589563241, guid: 2ae55de4fe11947499e5386cdd56d113, type: 3}
+  strongEnemies:
+  - {fileID: 5089185324820041665, guid: e13b9de013272b74e822f38bd7148ee9, type: 3}
+  - {fileID: 3808337729375701589, guid: 0d3f09796b2d6cd499b4281c1f61c610, type: 3}
+  - {fileID: 1654076918138787175, guid: da1a0d15ae878a04ea3b9a4d2cc92050, type: 3}
+  miniBosses:
+  - {fileID: 4773313681468649594, guid: 0aad5dbeb9d2b4a4594dc37dd1e6f591, type: 3}
+  - {fileID: 3895931472274957052, guid: c39818ce41ead514c929828f2d8b7592, type: 3}

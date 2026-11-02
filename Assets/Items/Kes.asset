@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
   m_Name: Kes
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
-  itemIcon: {fileID: 0}
+  itemName: "K\xE9s"
+  itemIcon: {fileID: -1844213531876117813, guid: 3222ed7f44a877f40bc5c4cb43841560, type: 3}
   description: 
-  isWeapon: 0
+  isWeapon: 1
   isConsumable: 0
   isKey: 0
   healAmount: 0
-  attackDamage: 0
-  attackRange: 0
-  attackSpeed: 0
-  price: 0
+  attackDamage: 10
+  attackRange: 0.6
+  attackSpeed: 0.4
+  price: 25

@@ -20,6 +20,6 @@ MonoBehaviour:
   isKey: 0
   healAmount: 0
   attackDamage: 5
-  attackRange: 0.5
+  attackRange: 0.7
   attackSpeed: 1.2
   price: 3

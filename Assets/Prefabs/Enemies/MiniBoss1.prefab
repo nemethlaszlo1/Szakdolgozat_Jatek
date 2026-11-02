@@ -373,7 +373,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d492b7125c8984a46aad6e448973e68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootSpawner
-  lootTable: []
+  lootTable:
+  - itemPrefab: {fileID: 622579907392139450, guid: c92de6f83359176418ea602ff0aa4bf0, type: 3}
+    dropChance: 30.8
+  - itemPrefab: {fileID: 622579907392139450, guid: 8a23a0db563f52144a84835366f97e2c, type: 3}
+    dropChance: 50.7
+  - itemPrefab: {fileID: 622579907392139450, guid: 914e0dece4c312542afed0195ed7c5d3, type: 3}
+    dropChance: 30.8
+  - itemPrefab: {fileID: 622579907392139450, guid: 7bc02a5603b94cb49b3cb188e179af0b, type: 3}
+    dropChance: 25.9
+  - itemPrefab: {fileID: 622579907392139450, guid: 56ccbbb0f9f041e44afc2d960dc61cbe, type: 3}
+    dropChance: 10
+  - itemPrefab: {fileID: 8573617577761747643, guid: e3622a5e5352e2f4ab4d5b34cb148ba9, type: 3}
+    dropChance: 75.1
+  - itemPrefab: {fileID: 622579907392139450, guid: af1f2ad041f85de4abca8d894e5652fb, type: 3}
+    dropChance: 25.9
 --- !u!114 &2824482750957684458
 MonoBehaviour:
   m_ObjectHideFlags: 0

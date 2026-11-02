@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
   m_Name: Ajto_Kulcs
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
-  itemIcon: {fileID: 0}
+  itemName: "Ajt\xF3 Kulcs"
+  itemIcon: {fileID: 4652941326078495051, guid: 2b067fd7688933241903c080aa879ad4, type: 3}
   description: 
   isWeapon: 0
   isConsumable: 0

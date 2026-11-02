@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
   m_Name: Nagyital
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
-  itemIcon: {fileID: 0}
+  itemName: "Nagy \xE9leter\u0151 ital"
+  itemIcon: {fileID: -7968582897747660167, guid: 56505ef27041fd54ca57e0d4a3abb2eb, type: 3}
   description: 
   isWeapon: 0
   isConsumable: 0
   isKey: 0
-  healAmount: 0
+  healAmount: 100
   attackDamage: 0
   attackRange: 0
   attackSpeed: 0
-  price: 0
+  price: 25

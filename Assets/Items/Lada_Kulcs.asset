@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9394a2d5fe1d547bbd62ebbd170769, type: 3}
   m_Name: Lada_Kulcs
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Lada_Kulcs
-  itemIcon: {fileID: 0}
+  itemName: "L\xE1da Kulcs"
+  itemIcon: {fileID: 1435148537817320711, guid: a0a8db59d5c7a514c8b282a0df42c13a, type: 3}
   description: 
   isWeapon: 0
   isConsumable: 0
