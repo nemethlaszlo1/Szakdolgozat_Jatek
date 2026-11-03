@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public int health = 100;
     public int maxHealth = 100;
     public int coins = 0;
+    public bool isQuestActive = false;
+    public int questKillCount = 0;
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI coinText;

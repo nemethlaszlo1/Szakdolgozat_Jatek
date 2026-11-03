@@ -79,6 +79,35 @@ public class DungeonGenerator : MonoBehaviour
             currentDoor.spawned = true;
             Destroy(currentDoor.gameObject);
         }
+
+        SpawnBossRoom();
+    }
+
+    void SpawnBossRoom()
+    {
+        Vector2Int furthestPos = Vector2Int.zero;
+        float maxDistance = 0f;
+
+        foreach (var kvp in grid)
+        {
+            float dist = Vector2.Distance(Vector2Int.zero, kvp.Key);
+            if (dist > maxDistance && kvp.Value != null && !kvp.Value.name.Contains("Closed"))
+            {
+                maxDistance = dist;
+                furthestPos = kvp.Key;
+            }
+        }
+
+        GameObject oldRoom = grid[furthestPos]; //szoba csere
+        Vector3 exactPos = oldRoom.transform.position;
+
+        // sima szoba törlés
+        Destroy(oldRoom);
+
+        GameObject bossRoom = Instantiate(templates.bossRoom, exactPos, Quaternion.identity);
+        grid[furthestPos] = bossRoom;
+
+        Debug.Log("Boss szoba generálva a következő koordinátán: " + furthestPos);
     }
 
     // irány meghatározása a spawner helyi pozíciója alapján

@@ -108,4 +108,30 @@ public class InventoryManager : MonoBehaviour
     {
         actionPanel.SetActive(false);
     }
+
+    public bool RemoveItemByType(Item itemToRemove)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item != null && slots[i].item == itemToRemove)
+            {
+                slots[i].ClearSlot();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool ConsumeKey(string requiredKeyName)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item != null && slots[i].item.isKey && slots[i].item.itemName == requiredKeyName)
+            {
+                slots[i].ClearSlot();
+                return true;
+            }
+        }
+        return false;
+    }
 }

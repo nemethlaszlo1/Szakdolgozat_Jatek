@@ -48,6 +48,12 @@ public class EnemyHealth : MonoBehaviour
             gm.AddXP(xpDropAmount); //szörny xp dobás
         }
 
+        if (gm.isQuestActive)
+        {
+            gm.questKillCount++;
+            Debug.Log("Küldetés: " + gm.questKillCount + " szörny megölve.");
+        }
+
         //loot
         LootSpawner spawner = GetComponent<LootSpawner>();
         if (spawner != null)

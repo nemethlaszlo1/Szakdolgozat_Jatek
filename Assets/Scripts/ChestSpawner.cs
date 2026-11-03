@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ChestSpawner : MonoBehaviour
 {
-    [Header("Spawn Beállítások")]
     public float spawnChance = 15f;
 
     public GameObject[] simpleChests;
